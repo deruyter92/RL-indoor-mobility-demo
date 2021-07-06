@@ -1,6 +1,5 @@
 import numpy as np
 import socket
-from PIL import Image
 
 
 class Environment:
@@ -22,9 +21,6 @@ class Environment:
     def step(self, action):
         self._send(4, action)
         return self._receive()
-
-    def state2image(self, state):
-        return Image.fromarray(np.array(state, "uint8").reshape(self.size, self.size, 3))
 
     def state2usableArray(self, state):
         return np.array(state, "uint8").reshape(self.size, self.size, 3)
