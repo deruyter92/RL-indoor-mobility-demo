@@ -22,7 +22,7 @@ Credits for the code go to Sam Danen.
 ### Usage
 
 Step 1: 
-Start the environment server by running the Unity server application which can be found in the Build folder. In the GUI, press 'start' to accept the default environment. parameters
+Start the environment server by running the Unity server application which can be found in the Build folder. In the GUI, press 'start' to accept the default environment parameters.
 
 Step 2: 
 For a demonstration of navigation in the environment run:
