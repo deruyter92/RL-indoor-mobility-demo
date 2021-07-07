@@ -1,35 +1,5 @@
 import numpy as np
 import cv2
-from threading import Thread
-
-class Window:
-    def __init__(self,windowname='Hallway', size=(1200,1200), frame=None):
-        self._size          = size
-        self._windowname    = windowname
-        self.frame          = frame if frame is not None else np.zeros(size+(3,))
-        self.stopped        = False
-        self.keypress       = None
-
-    def start(self):
-        Thread(target=self.show, args=()).start()
-        return self
-
-
-    def show(self):
-        while not self.stopped:
-            img = cv2.resize(self.frame, self._size)
-            cv2.imshow(self._windowname, img)
-            key = cv2.waitKey(1)
-            if key != -1:
-                self.keypress = key
-
-    def getKey(self):
-        key = self.keypress
-        self.keypress = None
-        return key
-
-    def stop(self):
-        self.stopped = True
 
 class PhospheneSimulator(object):
     def __init__(self,phosphene_resolution=(50,50), size=(480,480),  jitter=0.35, intensity_var=0.9, aperture=.66, sigma=0.8, custom_grid=None):
