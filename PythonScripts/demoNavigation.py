@@ -12,7 +12,7 @@ port       = 13000       # Port number that the TCP/IP interface listens to
 size       = 128
 screen_height = screen_width = size
 environment = pyClientRLagentPytorch.Environment(ip = ip, port = port, size = size)
-print(environment.client)
+assert (environment.client is not None), "No server found! Please start Unity environment first"
 
 # reset the environment
 end, reward, state_raw = environment.reset()
