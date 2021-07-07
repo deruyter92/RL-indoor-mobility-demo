@@ -17,7 +17,6 @@ Credits for the code go to Sam Danen.
 
 - cv2
 - socket
-- threading
 
 ### Usage
 
